@@ -282,7 +282,6 @@ local function get_templates(templates_path)
     local config_file = plenary_path:new(dir) / 'bp-template.lua'
     if config_file:is_file() then
       local template_config = loadstring(config_file:read())()
-      print(vim.inspect(template_config))
       if #template_config > 1 then -- Multiple templates
         for _, template_entry in ipairs(template_config) do
           local entry = parse_entry(dir, template_entry)
